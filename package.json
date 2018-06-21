@@ -1,0 +1,31 @@
+{
+  "name": "HeroeBuy",
+  "version": "1.0.0",
+  "description": "start",
+  "main": "main.js",
+  "dependencies": {
+    "less": "^3.0.4"
+  },
+  "devDependencies": {
+    "less-watch-compiler": "^1.11.3"
+  },
+  "scripts": {
+    "less": "lessc less/main.less css/main.css",
+    "watch-less": "less-watch-compiler less css main.less",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenielNCore/HeroeBuy.git"
+  },
+  "keywords": [
+    "heroes",
+    "buy"
+  ],
+  "author": "DenielNCore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenielNCore/HeroeBuy/issues"
+  },
+  "homepage": "https://github.com/DenielNCore/HeroeBuy#readme"
+}
