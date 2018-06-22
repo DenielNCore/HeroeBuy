@@ -4,5 +4,14 @@
 @import "styles.less";
 @import "header.less";
 main {
-  height: 1500px;
+height: 1000px;
+  width: 80%;
+  border: @bord;
+  margin-left: 180px;
+  @media (max-width: 1200px) {
+    width: 75%;
+  }
+  @media (max-width: 1000px) {
+    width: 70%;
+  }
 }

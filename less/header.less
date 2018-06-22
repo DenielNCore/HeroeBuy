@@ -1,20 +1,31 @@
 header {
-  .headCart {
-    width: 200px;
-    height: 100px;
-    position: fixed;
-    right: 1px;
-    background: @test;
-  }
-  .headChoose {
-    width: auto;
-    height: 225px;
-    background: @test2;
-    .dcselect {
-      background-image: url("img/dc");
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+
+  .getHead {
+    box-sizing: border-box;
+    width: 99%;
+    height: 99%;
+    padding-left: 140px;
+    padding-right: 80px;
+    .headChoose {
+      display: flex;
+      background: url("../img/head.png") no-repeat;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      //border: 1px solid black;
     }
-    .marvelselect {
-      
-    }
   }
+}
+.headCart {
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  right: 1px;
+  background: @test;
 }

@@ -1,18 +1,83 @@
-header .headCart {
+nav {
+  top: 280px;
+  width: 120px;
+  position: fixed;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+footer {
+  width: 80%;
+  height: 200px;
+  background: blue;
+  position: relative;
+  left: 180px;
+  top: 50px;
+}
+@media (max-width: 1200px) {
+  footer {
+    width: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  footer {
+    width: 70%;
+  }
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+}
+header .getHead {
+  box-sizing: border-box;
+  width: 99%;
+  height: 99%;
+  padding-left: 140px;
+  padding-right: 80px;
+}
+header .getHead .headChoose {
+  display: flex;
+  background: url("../img/head.png") no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.headCart {
   width: 200px;
   height: 100px;
   position: fixed;
   right: 1px;
   background: red;
 }
-header .headChoose {
-  width: auto;
-  height: 225px;
-  background: blue;
-}
-header .headChoose .dcselect {
-  background-image: url("img/dc");
-}
 main {
-  height: 1500px;
+  height: 1000px;
+  width: 80%;
+  border: 1px solid black;
+  margin-left: 180px;
+}
+@media (max-width: 1200px) {
+  main {
+    width: 75%;
+  }
+}
+@media (max-width: 1000px) {
+  main {
+    width: 70%;
+  }
 }
