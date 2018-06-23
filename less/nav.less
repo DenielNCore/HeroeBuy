@@ -5,9 +5,9 @@ nav {
   width: 120px;
   position: fixed;
   transition: 0.9s;
-  ul {
+  > ul {
     display: none;
-    li {
+    > li {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,6 +16,34 @@ nav {
       border: @bord;
       margin-top: 12px;
       margin-bottom: 12px;
+    }
+
+    .allHeroes {
+      &:hover {
+         ol {
+          display: flex;
+        }
+      }
+      > ol {
+        margin-left: -10px;
+        left: 150px;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        height: 120px;
+        > li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 150px;
+          height: 50px;
+          border: @bord;
+          margin-left: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
     }
   }
   .toggleNav {
@@ -28,6 +56,16 @@ nav {
     border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
     transition: 0.9s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      writing-mode: tb-rl;
+      font-family: "Arial Black", sans-serif;
+      font-size: @s;
+
+    }
     @media (min-width: 1500px) {
       top: 340px;
     }
@@ -39,9 +77,32 @@ nav {
     }
   }
   .toggleNav2 {
-    border-radius: 30px 0 0 30px;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+  .scroll2 {
+    top: 140px;
   }
 
+  .scrollWheel {
+    width: 45px;
+    height: 45px;
+    border: @bord;
+    position: fixed;
+    bottom: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bauhaus 93", fantasy;
+    font-size: 1.5*@s;
+    transform: rotate(270deg);
+    transition: 0.5s;
+
+    &:after {
+      content: ">";
+    }
+  }
   @media (min-width: 1500px) {
     top: 350px;
   }
@@ -52,4 +113,6 @@ nav {
     top: 200px;
   }
 }
-
+.scroll {
+  top: 150px;
+}

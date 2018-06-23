@@ -12,3 +12,17 @@ $(".toggleNav").click(() => {
         $nav.removeClass("toggleNav2");
     }
 });
+window.onscroll = () => {
+    let y = window.pageYOffset;
+    if(y>=200) {
+        $(`nav`).addClass("scroll");
+        $(`.toggleNav`).addClass("scroll2");
+        $('.scrollWheel').css({display: 'flex'})
+    }
+    if(y<200) {
+        $(`nav`).removeClass("scroll");
+        $(`.toggleNav`).removeClass("scroll2");
+        $('.scrollWheel').css({display: 'none'})
+    }
+};
+$(".scrollWheel").click(() => window.scrollTo(0,0));

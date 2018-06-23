@@ -6,10 +6,10 @@ nav {
   position: fixed;
   transition: 0.9s;
 }
-nav ul {
+nav > ul {
   display: none;
 }
-nav ul li {
+nav > ul > li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,29 @@ nav ul li {
   border: 1px solid black;
   margin-top: 12px;
   margin-bottom: 12px;
+}
+nav > ul .allHeroes:hover ol {
+  display: flex;
+}
+nav > ul .allHeroes > ol {
+  margin-left: -10px;
+  left: 150px;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  height: 120px;
+}
+nav > ul .allHeroes > ol > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 nav .toggleNav {
   height: 350px;
@@ -29,6 +52,14 @@ nav .toggleNav {
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
   transition: 0.9s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .toggleNav span {
+  writing-mode: tb-rl;
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.5em;
 }
 @media (min-width: 1500px) {
   nav .toggleNav {
@@ -46,7 +77,29 @@ nav .toggleNav {
   }
 }
 nav .toggleNav2 {
-  border-radius: 30px 0 0 30px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+nav .scroll2 {
+  top: 140px;
+}
+nav .scrollWheel {
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+  position: fixed;
+  bottom: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bauhaus 93", fantasy;
+  font-size: 2.25em;
+  transform: rotate(270deg);
+  transition: 0.5s;
+}
+nav .scrollWheel:after {
+  content: ">";
 }
 @media (min-width: 1500px) {
   nav {
@@ -63,25 +116,86 @@ nav .toggleNav2 {
     top: 200px;
   }
 }
+.scroll {
+  top: 150px;
+}
 .headCart {
   z-index: 101;
-  width: 200px;
-  height: 100px;
+  width: 150px;
+  height: 20px;
   position: fixed;
   right: 1px;
   background: white;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s;
 }
-.headCart .heart {
+.headCart:hover {
+  transition: 0.1s;
+  height: 55px;
+}
+.headCart:hover > div {
+  display: flex;
+}
+.headCart > div {
+  border: 1px solid black;
+  margin-top: 4px;
+  display: none;
+  padding: 2px;
+}
+.headCart > div .heart {
   height: 32px;
   width: 32px;
+  margin-left: 7px;
+  margin-right: 7px;
 }
-.headCart .miniCart {
+.headCart > div .miniCart {
   height: 32px;
   width: 32px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.mainCart {
+  position: fixed;
+  width: 300px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 101;
+}
+.mainCart .buyNumber {
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 275px;
+  top: -10px;
+  position: relative;
+}
+.mainCart .toggleCart {
+  border: 1px solid black;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCart .toggleCart:after {
+  transform: rotate(90deg);
+  content: "||";
+}
+.mainCart .cartContent {
+  height: 110px;
+  border: 1px solid black;
+  transition: 0.7s;
 }
 footer {
-  width: 80%;
   height: 200px;
+  width: 80%;
   background: blue;
   position: relative;
   left: 180px;
@@ -96,6 +210,16 @@ footer {
   footer {
     width: 70%;
   }
+}
+footer .footMenu {
+  height: 160px;
+}
+footer .copywrite {
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  height: 40px;
+  background: red;
 }
 header {
   display: flex;
@@ -118,12 +242,57 @@ header .getHead .headChoose {
   height: 100%;
   background-size: contain;
 }
+.item {
+  border: 1px solid black;
+  width: 270px;
+  height: 400px;
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.item .itemName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  margin-top: 20px ;
+}
+.item .itemInfo {
+  width: 250px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+.item .itemInfo > div {
+  width: 70px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item .itemImg {
+  background: url("../img/heroes/marvel/deadpool1.png") no-repeat;
+  width: 256px;
+  height: 256px;
+  border: 1px solid black;
+}
+body {
+  background: grey;
+}
 main {
   z-index: 99;
   height: 1000px;
   width: 80%;
   border: 1px solid black;
   margin-left: 182px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 @media (max-width: 1200px) {
   main {

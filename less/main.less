@@ -3,12 +3,19 @@
 @import "footter.less";
 @import "styles.less";
 @import "header.less";
+@import "items.less";
+body {
+  background: grey;
+}
 main {
   z-index: 99;
   height: 1000px;
   width: 80%;
   border: @bord;
   margin-left: 182px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   @media (max-width: 1200px) {
     width: 75%;
   }
