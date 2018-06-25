@@ -12,10 +12,7 @@ function Cart(items, parent, onChange) {
     this.add = addItem;
 
     function createTemplate () {
-        return $(`<div class="price">$100</div>
-        <div class="buyNumber">{{1}}</div>
-        <div class="toggleCart"></div>
-<div class="cartContent empty">
+        return $(`<div class="cartContent empty">
                     <h2 class="empty-massage"> Корзина пуста...</h2>
                 </div>`).appendTo(parent);
     }
@@ -28,6 +25,7 @@ function Cart(items, parent, onChange) {
     }
 
     function removeItem(id) {
+        debugger;
         removeById(id);
         updateState();
         onChange(self.items);
@@ -35,7 +33,7 @@ function Cart(items, parent, onChange) {
 
 
     function renderItem(item) {
-        $(`<div class="cart-item">
+        $(`<div data-id="${item.id}" class="cart-item">
                 <div class="cartPhotoes"><img alt="hero" src="img/heroes${item.photo1}"></div>
                 <div class="deleteGood">Убрать</div>
             </div>`).appendTo(`.cartContent`);
@@ -52,7 +50,10 @@ function Cart(items, parent, onChange) {
         } else {
             $el.addClass(`empty`);
         }
-        $el.find(`price`).text('$' + getTotal());
+        $(`.price`).text(`$${getTotal()}`);
+        $(`.buyNumber`).text(`${items.length}`)
+        console.dir(items.length)
+
     }
 
 
@@ -60,6 +61,7 @@ function Cart(items, parent, onChange) {
     function removeById(id) {
         let index = -1;
 
+        debugger;
         for (let i = 0; i < self.items.length; i++) {
             if (self.items[i].id === id) {
                 index = i;
@@ -67,9 +69,11 @@ function Cart(items, parent, onChange) {
             }
         }
 
+        console.dir(self.items);
         if (index >= 0) {
             self.items.splice(index, 1);
         }
+
     }
 
 
@@ -79,7 +83,6 @@ function Cart(items, parent, onChange) {
      //       console.dir($tar);
             let id = $tar.data(`id`);
             $tar.remove();
-
             removeItem(id)
         });
     }
