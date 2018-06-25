@@ -25,6 +25,11 @@ function GoodsList(options) {
 
     $el.on(`click`, `.toggleToCart`, event => {
        let id = $(event.target).closest(`.goods`).attr(`id`);
+
+
+        $(event.target).attr('src',"img/bigCart2.png" );
+        console.dir($(event.target));
+
        let item = getById(+id);
        addItem(item);
     });

@@ -51,8 +51,12 @@ function Cart(items, parent, onChange) {
             $el.addClass(`empty`);
         }
         $(`.price`).text(`$${getTotal()}`);
-        $(`.buyNumber`).text(`${items.length}`)
-        console.dir(items.length)
+        $(`.buyNumber`).text(`${items.length}`);
+
+        if(items.length!==0) {
+            $(`.miniCart`).attr("scr",`/img/cart2.png`);
+        }
+
 
     }
 
@@ -80,7 +84,7 @@ function Cart(items, parent, onChange) {
     function bindEvents() {
         $el.on('click', `.deleteGood`, event => {
             let $tar = $(event.target).closest(`.cart-item`);
-     //       console.dir($tar);
+          console.dir($(event.target));
             let id = $tar.data(`id`);
             $tar.remove();
             removeItem(id)
