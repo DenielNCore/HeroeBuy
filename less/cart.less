@@ -44,7 +44,14 @@
    right: 10px;
    bottom: 10px;
    z-index: 101;
-
+   background: white;
+  .price {
+    position: relative;
+    left: 210px;
+    margin-bottom: -20px;
+    width: 50px;
+    font-size: @s;
+  }
   .buyNumber {
     width: 25px;
     height: 25px;
@@ -74,7 +81,43 @@
      height: 110px;
      border: @bord;
      transition: 0.7s;
+     display: flex;
+     overflow: auto;
+      &.empty {
+        .empty-massage {
+          display: block;
+        }
+      }
+     .empty-massage {
+        font: bold @s arial ;
+        display: none;
+     }
+     .cart-item {
+       border: @bord;
+       width: 70px;
+       height: 85px;
+       margin: 3px 5px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
 
+       .cartPhotoes {
+        img {
+          width: 64px;
+          height: 64px;
+        }
+       }
+       .deleteGood {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         &:hover {
+           color: red;
+           cursor: pointer;
+         }
+       }
+
+     }
 
    }
  }

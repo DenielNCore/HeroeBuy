@@ -1,43 +1,51 @@
-.item {
-  border: @bord;
-  width: 270px;
-  height: 400px;
-  margin: 40px 20px;
+.goods-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  .itemName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    margin-top: 20px ;
-  }
-
-  .itemInfo {
-    width: 250px;
-    height: 50px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .goods {
     border: @bord;
+    width: 270px;
+    height: 400px;
+    margin: 40px 40px;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    > div {
-      width: 70px;
-      height: 50px;
-      border: @bord;
+    .itemName {
       display: flex;
       justify-content: center;
       align-items: center;
+      color: red;
+      margin-top: 20px;
     }
-  }
 
-  .itemImg {
-   background: url("../img/heroes/marvel/deadpool1.png") no-repeat;
-    width: 256px;
-    height: 256px;
-    border: @bord;
+    .itemInfo {
+      width: 250px;
+      height: 50px;
+      border: @bord;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 5px;
+
+      .toggleToCart {
+
+      }
+      > div {
+        width: 70px;
+        height: 50px;
+        border: @bord;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .itemImg {
+      background: url("../img/heroes/marvel/deadpool1.png") no-repeat;
+      width: 256px;
+      height: 256px;
+      border: @bord;
+    }
   }
 }

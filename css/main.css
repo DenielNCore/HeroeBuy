@@ -19,6 +19,14 @@ nav > ul > li {
   margin-top: 12px;
   margin-bottom: 12px;
 }
+nav > ul > li:hover {
+  color: red;
+  cursor: pointer;
+}
+nav > ul > li:hover li {
+  color: black;
+  cursor: pointer;
+}
 nav > ul .allHeroes:hover ol {
   display: flex;
 }
@@ -42,6 +50,10 @@ nav > ul .allHeroes > ol > li {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+nav > ul .allHeroes > ol > li:hover {
+  color: red;
+  cursor: pointer;
+}
 nav .toggleNav {
   height: 350px;
   width: 30px;
@@ -55,6 +67,10 @@ nav .toggleNav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+nav .toggleNav:hover {
+  color: red;
+  cursor: pointer;
 }
 nav .toggleNav span {
   writing-mode: tb-rl;
@@ -164,6 +180,14 @@ nav .scrollWheel:after {
   right: 10px;
   bottom: 10px;
   z-index: 101;
+  background: white;
+}
+.mainCart .price {
+  position: relative;
+  left: 210px;
+  margin-bottom: -20px;
+  width: 50px;
+  font-size: 1.5em;
 }
 .mainCart .buyNumber {
   width: 25px;
@@ -192,6 +216,37 @@ nav .scrollWheel:after {
   height: 110px;
   border: 1px solid black;
   transition: 0.7s;
+  display: flex;
+  overflow: auto;
+}
+.mainCart .cartContent.empty .empty-massage {
+  display: block;
+}
+.mainCart .cartContent .empty-massage {
+  font: bold 1.5em arial;
+  display: none;
+}
+.mainCart .cartContent .cart-item {
+  border: 1px solid black;
+  width: 70px;
+  height: 85px;
+  margin: 3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mainCart .cartContent .cart-item .cartPhotoes img {
+  width: 64px;
+  height: 64px;
+}
+.mainCart .cartContent .cart-item .deleteGood {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainCart .cartContent .cart-item .deleteGood:hover {
+  color: red;
+  cursor: pointer;
 }
 footer {
   height: 200px;
@@ -242,24 +297,29 @@ header .getHead .headChoose {
   height: 100%;
   background-size: contain;
 }
-.item {
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.goods-list .goods {
   border: 1px solid black;
   width: 270px;
   height: 400px;
-  margin: 40px 20px;
+  margin: 40px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.item .itemName {
+.goods-list .goods .itemName {
   display: flex;
   justify-content: center;
   align-items: center;
   color: red;
-  margin-top: 20px ;
+  margin-top: 20px;
 }
-.item .itemInfo {
+.goods-list .goods .itemInfo {
   width: 250px;
   height: 50px;
   border: 1px solid black;
@@ -267,7 +327,7 @@ header .getHead .headChoose {
   justify-content: space-around;
   margin-bottom: 5px;
 }
-.item .itemInfo > div {
+.goods-list .goods .itemInfo > div {
   width: 70px;
   height: 50px;
   border: 1px solid black;
@@ -275,7 +335,7 @@ header .getHead .headChoose {
   justify-content: center;
   align-items: center;
 }
-.item .itemImg {
+.goods-list .goods .itemImg {
   background: url("../img/heroes/marvel/deadpool1.png") no-repeat;
   width: 256px;
   height: 256px;
@@ -286,7 +346,8 @@ body {
 }
 main {
   z-index: 99;
-  height: 1000px;
+  min-height: 800px;
+  max-height: 5000px;
   width: 80%;
   border: 1px solid black;
   margin-left: 182px;
