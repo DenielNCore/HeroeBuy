@@ -71,25 +71,24 @@ function GoodsList(options) {
         });
     }
 
-    function createGood() {
-
-        let z = $(`<div class="goodContent">
+    function createGood(good) {
+            $(`<div class="goodContent" id="${100+good.id}">
                 <div class="miniPhotos">
-                    <img src="img/heroes/marvel/deadpool1.png">
-                    <img src="img/heroes/marvel/deadpool2.png">
-                    <img src="img/heroes/marvel/deadpool3.png">
+                    <img src="img/heroes/${good.photo1}">
+                    <img src="img/heroes/${good.photo2}">
+                    <img src="img/heroes/${good.photo3}">
                 </div>
                 <div class="bigPhoto">
-                    <div>Deadpool</div>
-                    <img src="img/heroes/marvel/deadpool1.png">
+                    <div>${good.name}</div>
+                    <img src="img/heroes/${good.photo1}">
                     <div class="itemInfo">
                         <div class="itemPrice">
-                            <span>${{price}}</span>
+                            <span>$ ${good.price}</span>
                         </div>
                         <div class="itemLike">
                             <img src="img/big1.png">
                         </div>
-                        <div class="itemCart">
+                        <div class="toggleToCart">
                             <img src="img/bigCart1.png">
                         </div>
                     </div>
@@ -97,32 +96,41 @@ function GoodsList(options) {
                 <div class="closeGood">Закрыть</div>
             </div>
             <div class="goodInfo">
-                <span class="goodText">      897</span>
+                <span class="goodText">${good.info}</span>
             </div>`).appendTo(`.GoodBig`);
-        console.dir(z)
     }
 
 
     $el.on(`click`, `.itemImg`, event => {
-
-        $(`.GoodBig`).removeClass(`hide`);
-        createGood();
+        let id = $(event.target).closest(`.goods`).attr(`id`);
+        let $cont = $(`.GoodBig`);
+        if($cont.children().length ===0) {
+            $cont.removeClass(`hide`);
+            createGood(goods[id - 1]);
+        }
     });
 
     $(`.GoodBig`).on(`click`, `.closeGood`, event => {
-        $(`.GoodBig`).addClass(`hide`);
+        let $cont = $(`.GoodBig`);
+        $cont.addClass(`hide`);
+        $cont.children().remove();
+
     });
 
 
-    $el.on(`click`, `.toggleToCart`, event => {
+    $(`body`).on(`click`, `.toggleToCart`, event => {
        let id = $(event.target).closest(`.goods`).attr(`id`);
-
-
+        let item;
+        if(id === undefined) {
+            id = $(event.target).closest(`.goodContent`).attr(`id`);
+            item = getById(+id-100);
+            addItem(item);
+        }else {
+            item = getById(+id);
+            addItem(item);
+        }
+            console.dir(id);
         $(event.target).attr('src',"img/bigCart2.png" );
-     //   console.dir($(event.target));
-
-       let item = getById(+id);
-       addItem(item);
     });
     
     function getById(id) {

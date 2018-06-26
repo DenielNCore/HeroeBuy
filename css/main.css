@@ -234,11 +234,12 @@ nav .scrollWheel:after {
   overflow: auto;
 }
 .mainCart .cartContent.empty .empty-massage {
-  display: block;
+  display: flex;
 }
 .mainCart .cartContent .empty-massage {
   font: bold 1.5em arial;
   display: none;
+  align-items: center;
 }
 .mainCart .cartContent .cart-item {
   border: 1px solid black;
