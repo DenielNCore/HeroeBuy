@@ -11,6 +11,11 @@ function Cart(items, parent, onChange) {
 
     this.add = addItem;
 
+
+
+
+
+
     function createTemplate () {
         return $(`<div class="cartContent empty">
                     <h2 class="empty-massage"> Корзина пуста...</h2>
@@ -25,7 +30,6 @@ function Cart(items, parent, onChange) {
     }
 
     function removeItem(id) {
-        debugger;
         removeById(id);
         updateState();
         onChange(self.items);
@@ -44,14 +48,18 @@ function Cart(items, parent, onChange) {
 
     function updateState() {
         let items = $el.find(`.cart-item`);
+        let $miniCart = $(`.miniCart`).children().eq(0);
 
         if(items.length > 0) {
             $el.removeClass(`empty`);
+            $miniCart.attr('src',"img/cart2.png");
         } else {
             $el.addClass(`empty`);
+            $miniCart.attr('src',"img/cart1.png");
         }
         $(`.price`).text(`$${getTotal()}`);
         $(`.buyNumber`).text(`${items.length}`);
+        $(`.buyNumberMini`).text(`${items.length}`);
 
         if(items.length!==0) {
             $(`.miniCart`).attr("scr",`/img/cart2.png`);
@@ -65,7 +73,6 @@ function Cart(items, parent, onChange) {
     function removeById(id) {
         let index = -1;
 
-        debugger;
         for (let i = 0; i < self.items.length; i++) {
             if (self.items[i].id === id) {
                 index = i;
@@ -73,7 +80,7 @@ function Cart(items, parent, onChange) {
             }
         }
 
-        console.dir(self.items);
+       // console.dir(self.items);
         if (index >= 0) {
             self.items.splice(index, 1);
         }

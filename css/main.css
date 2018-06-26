@@ -174,6 +174,20 @@ nav .scrollWheel:after {
   margin-left: 7px;
   margin-right: 7px;
 }
+.headCart > div .miniCart .buyNumberMini {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  color: black;
+  background: red;
+  right: 30px;
+  top: 15px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 .mainCart {
   position: fixed;
   width: 300px;
@@ -340,6 +354,98 @@ header .getHead .headChoose {
   width: 256px;
   height: 256px;
   border: 1px solid black;
+}
+main .GoodBig {
+  position: fixed;
+  background: white;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  z-index: 200;
+  overflow: auto;
+}
+main .GoodBig.hide {
+  display: none;
+}
+main .GoodBig .closeGood {
+  border: 1px solid black;
+  height: 20px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+main .GoodBig .closeGood:hover {
+  color: red;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+main .GoodBig .goodContent {
+  width: 100%;
+  height: 65%;
+  min-height: 300px;
+  display: flex;
+}
+main .GoodBig .goodContent .bigPhoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  min-width: 350px;
+  width: 40%;
+  max-width: 500px;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 1.5em;
+  color: red;
+}
+main .GoodBig .goodContent .bigPhoto > img {
+  width: 256px;
+  height: 256px;
+  border: 1px solid black;
+}
+main .GoodBig .goodContent .bigPhoto .itemInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 18%;
+  max-height: 80px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+}
+main .GoodBig .goodContent .miniPhotos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 110px;
+  height: 100%;
+  border: 1px solid black;
+}
+main .GoodBig .goodContent .miniPhotos > img {
+  height: 96px;
+  width: 96px;
+}
+main .GoodBig .goodInfo {
+  width: 100%;
+  height: 35%;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .GoodBig .goodInfo .goodText {
+  margin: 20px;
+  font-size: 1.5em;
+  display: inline-block;
+  height: 70%;
+  width: 90%;
 }
 body {
   background: grey;

@@ -6,7 +6,8 @@ let goods = [{
     photo1: "/marvel/deadpool1.png",
     photo2: "/marvel/deadpool2.png",
     photo3: "/marvel/deadpool3.png",
-    brand: "marvel"
+    brand: "marvel",
+    info: "Американский комедийный фантастический боевик с Райаном Рейнольдсом в главной роли, снятый режиссёром Тимом Миллером на основе комиксов о персонаже Marvel Comics Дэдпуле. Восьмой фильм киносерии «Люди Икс». Премьера в США состоялась 10 февраля 2016 года."
 },{
     id: 2,
     name: "Captain America",
