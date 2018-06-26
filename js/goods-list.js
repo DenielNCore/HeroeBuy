@@ -2,9 +2,14 @@ function GoodsList(options) {
     let goods = options.goods;
     let parent = options.parent;
     let addItem = options.addItem;
+    let items = options.items;
+    let cartIcon = ["img/bigCart1.png", "img/bigCart2.png"];
+
     let $el = $('<div class="goods-list"/>').appendTo(parent);
-    let $good = $(`<div class="GoodBig hide"/>`).appendTo(parent);
-    console.dir($good);
+
+    $(`<div class="GoodBig hide"/>`).appendTo(parent);
+
+    //console.dir(items);
 
     spawnAll();
     $(`nav`).on(`click`, event => {
@@ -23,9 +28,24 @@ function GoodsList(options) {
 
     });
 
+    function cartMark(items,good) {
+        let  ides ={};
+        items.forEach((item) => {
+             ides[item.id] = true;
+        });
+        let pic=0;
+        for( let key in ides) {
+            if (key==good.id) {
+                pic=1;
+            }
+        }
+       return pic;
+    }
+
     function spawnBrand(brand) {
 
         goods.forEach(function(good) {
+            let pic = cartMark(items, good);
             if(brand===good.brand) {
 
                 $(`<figure class="goods" id="${good.id}">
@@ -39,7 +59,7 @@ function GoodsList(options) {
                         <img src="img/big1.png">
                     </div>
                     <div class="toggleToCart">
-                        <img src="img/bigCart1.png">
+                        <img src=${cartIcon[pic]}>
                     </div>
                 </figcaption>
             </figure>`).appendTo('.goods-list');
@@ -50,8 +70,7 @@ function GoodsList(options) {
     function spawnAll() {
 
         goods.forEach(function(good) {
-
-
+            let pic = cartMark(items,good);
             $(`<figure class="goods" id="${good.id}">
                 <div class="itemName">${good.name}</div>
                 <img class="itemImg" src="img/heroes/${good.photo1}" alt="heroe">
@@ -63,15 +82,15 @@ function GoodsList(options) {
                         <img src="img/big1.png">
                     </div>
                     <div class="toggleToCart">
-                        <img src="img/bigCart1.png">
+                        <img src=${cartIcon[pic]}>
                     </div>
                 </figcaption>
             </figure>`).appendTo('.goods-list');
-
         });
     }
 
     function createGood(good) {
+        let pic = cartMark(items,good);
             $(`<div class="goodContent" id="${100+good.id}">
                 <div class="miniPhotos">
                     <img src="img/heroes/${good.photo1}">
@@ -89,7 +108,7 @@ function GoodsList(options) {
                             <img src="img/big1.png">
                         </div>
                         <div class="toggleToCart">
-                            <img src="img/bigCart1.png">
+                            <img src=${cartIcon[pic]}>
                         </div>
                     </div>
                 </div>
@@ -129,8 +148,8 @@ function GoodsList(options) {
             item = getById(+id);
             addItem(item);
         }
-            console.dir(id);
-        $(event.target).attr('src',"img/bigCart2.png" );
+
+        $(event.target).attr('src',"img/bigCart2.png" );// картинка при выбраном
     });
     
     function getById(id) {

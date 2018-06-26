@@ -1,10 +1,11 @@
 .headCart {
   z-index: 101;
-  width: 150px;
-  height: 20px;
+  width: 180px;
+ // height: 20px;
+  height: 105px;
   position: fixed;
   right: 1px;
-  background: white;
+  background: grey;
   font-family: "Century Gothic", sans-serif;
   font-size: 0.75em;
   display: flex;
@@ -12,17 +13,35 @@
   align-items: center;
   transition: 1s;
 
+  .form {
+
+    margin-top: 5px;
+    display: flex;
+   // display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+      width: 120px;
+
+    }
+    button {
+      width: 50px;
+    }
+  }
   &:hover {
     transition: 0.1s;
-    height: 55px;
-    > div {
+    height: 105px;
+
+    > div, .form {
       display: flex;
     }
   }
   > div {
     border: @bord;
     margin-top: 4px;
-    display: none;
+   // display: none;
+    display: flex;
     padding: 2px;
 
     .heart {
@@ -39,8 +58,8 @@
         border-radius: 50%;
         color: black;
         background: red;
-        right: 30px;
-        top: 15px;
+        right: 45px;
+        top: 57px;
         position: fixed;
         display: flex;
         justify-content: center;
@@ -57,7 +76,7 @@
    right: 10px;
    bottom: 10px;
    z-index: 101;
-   background: white;
+
   .price {
     position: relative;
     left: 210px;
@@ -79,6 +98,7 @@
 
   }
    .toggleCart {
+     background: grey;
      border: @bord;
      height: 20px;
      display: flex;
@@ -91,6 +111,7 @@
      }
    }
    .cartContent {
+     background: grey;
      height: 110px;
      border: @bord;
      transition: 0.7s;

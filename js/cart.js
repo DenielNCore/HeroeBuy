@@ -2,19 +2,12 @@ function Cart(items, parent, onChange) {
     let self = this;
     let $el = createTemplate();
     this.items = items.slice();
-
-//////////////////////////////
     bindEvents();
 
     items.forEach(renderItem);
     updateState();
 
     this.add = addItem;
-
-
-
-
-
 
     function createTemplate () {
         return $(`<div class="cartContent empty">
@@ -64,6 +57,7 @@ function Cart(items, parent, onChange) {
         if(items.length!==0) {
             $(`.miniCart`).attr("scr",`/img/cart2.png`);
         }
+
 
 
     }

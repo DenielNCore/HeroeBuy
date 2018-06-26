@@ -6,6 +6,10 @@ nav {
   position: fixed;
   transition: 0.9s;
 }
+nav li {
+  background: grey;
+  border-radius: 5px;
+}
 nav > ul {
   display: none;
 }
@@ -55,6 +59,7 @@ nav > ul .allHeroes > ol > li:hover {
   cursor: pointer;
 }
 nav .toggleNav {
+  background: grey;
   height: 350px;
   width: 30px;
   border: 1px solid black;
@@ -137,11 +142,11 @@ nav .scrollWheel:after {
 }
 .headCart {
   z-index: 101;
-  width: 150px;
-  height: 20px;
+  width: 180px;
+  height: 105px;
   position: fixed;
   right: 1px;
-  background: white;
+  background: grey;
   font-family: "Century Gothic", sans-serif;
   font-size: 0.75em;
   display: flex;
@@ -149,17 +154,31 @@ nav .scrollWheel:after {
   align-items: center;
   transition: 1s;
 }
+.headCart .form {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.headCart .form input {
+  width: 120px;
+}
+.headCart .form button {
+  width: 50px;
+}
 .headCart:hover {
   transition: 0.1s;
-  height: 55px;
+  height: 105px;
 }
-.headCart:hover > div {
+.headCart:hover > div,
+.headCart:hover .form {
   display: flex;
 }
 .headCart > div {
   border: 1px solid black;
   margin-top: 4px;
-  display: none;
+  display: flex;
   padding: 2px;
 }
 .headCart > div .heart {
@@ -180,8 +199,8 @@ nav .scrollWheel:after {
   border-radius: 50%;
   color: black;
   background: red;
-  right: 30px;
-  top: 15px;
+  right: 45px;
+  top: 57px;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -194,7 +213,6 @@ nav .scrollWheel:after {
   right: 10px;
   bottom: 10px;
   z-index: 101;
-  background: white;
 }
 .mainCart .price {
   position: relative;
@@ -216,6 +234,7 @@ nav .scrollWheel:after {
   position: relative;
 }
 .mainCart .toggleCart {
+  background: grey;
   border: 1px solid black;
   height: 20px;
   display: flex;
@@ -227,6 +246,7 @@ nav .scrollWheel:after {
   content: "||";
 }
 .mainCart .cartContent {
+  background: grey;
   height: 110px;
   border: 1px solid black;
   transition: 0.7s;
@@ -266,7 +286,6 @@ nav .scrollWheel:after {
 footer {
   height: 200px;
   width: 80%;
-  background: blue;
   position: relative;
   left: 180px;
   top: 50px;
@@ -289,7 +308,7 @@ footer .copywrite {
   align-items: center;
   padding-left: 60px;
   height: 40px;
-  background: red;
+  background: #5d5d5d;
 }
 header {
   display: flex;
@@ -326,9 +345,11 @@ header .getHead .headChoose {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border-radius: 10px;
 }
 .goods-list .goods .itemName {
   display: flex;
+  font-size: 1.5em;
   justify-content: center;
   align-items: center;
   color: red;
@@ -336,8 +357,6 @@ header .getHead .headChoose {
 }
 .goods-list .goods .itemInfo {
   width: 250px;
-  height: 50px;
-  border: 1px solid black;
   display: flex;
   justify-content: space-around;
   margin-bottom: 5px;
@@ -365,6 +384,7 @@ main .GoodBig {
   height: 70%;
   z-index: 200;
   overflow: auto;
+  border-radius: 10px;
 }
 main .GoodBig.hide {
   display: none;
@@ -400,8 +420,7 @@ main .GoodBig .goodContent .bigPhoto {
   max-width: 500px;
   height: 100%;
   padding: 10px;
-  border: 1px solid black;
-  font-size: 1.5em;
+  font-size: 2.25em;
   color: red;
 }
 main .GoodBig .goodContent .bigPhoto > img {
@@ -427,11 +446,17 @@ main .GoodBig .goodContent .miniPhotos {
   align-items: center;
   width: 110px;
   height: 100%;
-  border: 1px solid black;
 }
 main .GoodBig .goodContent .miniPhotos > img {
   height: 96px;
   width: 96px;
+  border: 1px solid black;
+  position: relative;
+}
+main .GoodBig .goodContent .miniPhotos > img:hover {
+  left: 90px;
+  height: 288px;
+  width: 288px;
 }
 main .GoodBig .goodInfo {
   width: 100%;
@@ -457,6 +482,7 @@ main {
   max-height: 5000px;
   width: 80%;
   border: 1px solid black;
+  border-radius: 10px;
   margin-left: 182px;
   display: flex;
   flex-wrap: wrap;
