@@ -93,7 +93,7 @@ function GoodsList(options) {
         let pic = cartMark(items,good);
             $(`<div class="goodContent" id="${100+good.id}">
 
-<div>
+<div class="addNumber">
 <a href="tel:+380637136341">+ 38 (063) <span>713 63 41</span> </a>
 
 <a href="tel:+380637136341">+ 38 (063) 7136341 </a>
