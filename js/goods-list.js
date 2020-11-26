@@ -94,6 +94,7 @@ function GoodsList(options) {
             $(`<div class="goodContent" id="${100+good.id}">
 
 <a href="tel:+380637136341">+ 38 (063) <span>713 63 41</span> </a>
+<br>
 <a href="tel:+380637136341">+ 38 (063) 7136341 </a>
 
 
