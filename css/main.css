@@ -1,3 +1,12 @@
+.addNumber {
+  position: absolute;
+  width: 200px;
+  height: 200px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 nav {
   z-index: 100;
   top: 280px;
